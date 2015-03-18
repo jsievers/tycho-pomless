@@ -11,13 +11,18 @@ This is experimental and not for productive use.
 How to try it?
 --------------
 
+To build the build extension:
+
 ```mvn clean install```
-At this point you need to build maven 3.2.6-SNAPSHOT locally (master branch of https://github.com/apache/maven) 
-Maven 3.2.6-SNAPSHOT has new feature http://jira.codehaus.org/browse/MNG-5771 which this build extension is based on.
-Set M2_HOME to the locally built and extracted maven distro.
 
-src/test/resources/testpomless is a demo project with a pom-less bundle, test bundle and feature.
+`src/test/resources/testpomless` is a demo project with a pom-less bundle, test bundle and feature.
 
-Use 'mvn install' to build the demo project .
+To build the demo project, you need at least maven 3.3.1 to be able to use the new [build extension mechanism](http://jira.codehaus.org/browse/MNG-5771) `.mvn/extensions.xml`.
+
+In `src/test/resources/testpomless`:
+
+```mvn install```
+
+You should see a bundle, feature and test bundle being built (all without pom.xml).
 
 Feedback welcome, contact tycho-dev@eclipse.org .
